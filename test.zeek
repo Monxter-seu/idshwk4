@@ -16,9 +16,14 @@ event zeek_init()
                         local numOfReply = result["num of reply"];
 	        local numOf404= result["num of all 404"];
 	        local numOfU404= result["num of unique 404"];
-		if(numOf404$num>2 && numOf404$num/numOfReply$num>0.2 && numOfU404$unique/numOf404$num>0.5 ）
+				if(numOf404$num>2){
+		if(numOf404$num/numOfReply$num>0.2){
+		if(numOfU404$unique/numOf404$num>0.5 ）{
                         print fmt("%s is a scanner with %d scan attempts on  %d urls", 
                         			key$host, numOf404$num, numOfU404$unique);
+						}
+						}
+ }
                         }]);
     }
 
